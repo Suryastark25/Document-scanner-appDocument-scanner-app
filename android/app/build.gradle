@@ -1,0 +1,42 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    compileSdkVersion 33 // or your current compile SDK version
+
+    defaultConfig {
+        applicationId "com.example.document_scanner3" // Update with your application ID
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+        namespace 'com.example.document_scanner3'
+    }
+
+    
+    
+    buildTypes {
+        release {
+            minifyEnabled true // Enable code shrinking
+            shrinkResources true // Enable resource shrinking
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            // You can leave the debug block as it is or customize it as needed
+        }
+    }
+}
+
+
+
+dependencies {
+    implementation 'com.google.firebase:firebase-analytics:17.2.3' // Example dependency
+    // Add other dependencies as necessary
+}
+flutter {
+    source = "../.."
+}
